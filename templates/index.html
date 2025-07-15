@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Score Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>📊 Math Score Predictor</h2>
+        <form method="POST">
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+
+            <label for="race">Race/Ethnicity</label>
+            <select name="race" id="race">
+                <option value="0">Group A</option>
+                <option value="1">Group B</option>
+                <option value="2">Group C</option>
+                <option value="3">Group D</option>
+                <option value="4">Group E</option>
+            </select>
+
+            <label for="education">Parental Education</label>
+            <select name="education" id="education">
+                <option value="0">Associate's Degree</option>
+                <option value="1">Bachelor's Degree</option>
+                <option value="2">High School</option>
+                <option value="3">Master's Degree</option>
+                <option value="4">Some College</option>
+                <option value="5">Some High School</option>
+            </select>
+
+            <label for="lunch">Lunch</label>
+            <select name="lunch" id="lunch">
+                <option value="0">Free/Reduced</option>
+                <option value="1">Standard</option>
+            </select>
+
+            <label for="prep">Test Preparation</label>
+            <select name="prep" id="prep">
+                <option value="0">Completed</option>
+                <option value="1">None</option>
+            </select>
+
+            <label for="reading">Reading Score</label>
+            <input type="number" name="reading" id="reading" min="0" max="100" required>
+
+            <label for="writing">Writing Score</label>
+            <input type="number" name="writing" id="writing" min="0" max="100" required>
+
+            <button class="btn" type="submit">🔍 Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                🎯 <strong>Predicted Math Score:</strong> {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
